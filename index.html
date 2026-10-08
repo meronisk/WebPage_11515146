@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="山林特產，嚴選友善環境種植的小農當季好物，讓新鮮、安心又實惠的山林滋味走進日常。">
+  <meta name="theme-color" content="#e7f6f8">
+  <title>山林特產｜把山林的好，帶回日常</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --sky: #e7f6f8;
+      --sky-strong: #8ccfdd;
+      --blue: #39899a;
+      --deep: #205965;
+      --ink: #263d3d;
+      --muted: #6d8180;
+      --cream: #fffdf6;
+      --leaf: #64865c;
+      --line: #dce9e6;
+      --shadow: 0 18px 45px rgba(37, 82, 84, .1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .skip-link {
+      position: fixed; z-index: 20; top: 12px; left: 12px;
+      padding: 10px 16px; color: white; background: var(--deep);
+      border-radius: 999px; transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    .site-header { position: absolute; z-index: 5; inset: 0 0 auto; color: var(--deep); }
+    .nav {
+      min-height: 82px; display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; border-bottom: 1px solid rgba(32, 89, 101, .2);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; }
+    .brand-mark {
+      display: grid; width: 40px; height: 40px; place-items: center;
+      border: 1px solid var(--deep); border-radius: 50%; font-family: serif; font-size: 21px;
+    }
+    .brand-name { display: block; font-size: 17px; letter-spacing: .08em; line-height: 1.3; }
+    .brand small { display: block; margin-top: 3px; color: var(--muted); font-size: 8px; letter-spacing: .13em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 600; }
+    .nav-links a:not(.bag-link):hover { color: var(--blue); }
+    .bag-link {
+      display: inline-flex; align-items: center; gap: 9px; padding: 8px 14px;
+      border: 1px solid rgba(32, 89, 101, .38); border-radius: 999px;
+    }
+    .bag-count {
+      display: grid; width: 22px; height: 22px; place-items: center;
+      color: white; background: var(--deep); border-radius: 50%; font-size: 12px;
+    }
+    .menu-button {
+      display: none; width: 42px; height: 42px; color: var(--deep);
+      background: transparent; border: 1px solid rgba(32, 89, 101, .35); border-radius: 50%;
+    }
+    .hero { position: relative; overflow: hidden; background: var(--sky); }
+    .hero::before {
+      content: ""; position: absolute; top: -350px; right: -120px; width: 660px; height: 660px;
+      border: 1px solid rgba(57, 137, 154, .12); border-radius: 50%;
+      box-shadow: 0 0 0 70px rgba(57, 137, 154, .035), 0 0 0 150px rgba(57, 137, 154, .025);
+    }
+    .hero-grid {
+      position: relative; display: grid; min-height: 710px; padding-block: 125px 56px;
+      grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: .2em; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { max-width: 12ch; margin-bottom: 22px; font-size: clamp(46px, 6vw, 76px); line-height: 1.22; letter-spacing: .04em; }
+    .hero h1 em { color: var(--blue); font-style: normal; }
+    .hero-copy { max-width: 520px; margin-bottom: 27px; color: var(--muted); font-size: 16px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex; min-height: 48px; align-items: center; justify-content: center;
+      gap: 9px; padding: 11px 21px; border: 1px solid var(--deep); border-radius: 999px;
+      font-size: 14px; font-weight: 700; transition: transform .2s, background .2s, color .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: var(--deep); }
+    .button-primary:hover { background: var(--blue); border-color: var(--blue); }
+    .button-outline { color: var(--deep); }
+    .button-outline:hover { color: white; background: var(--deep); }
+    .hero-signature { margin: 25px 0 0; color: var(--leaf); font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    .landscape {
+      position: relative; min-height: 430px; overflow: hidden; border-radius: 48% 48% 24px 24px;
+      background: linear-gradient(#b9e2e8 0%, #e3f3e9 62%, #c3dcb6 100%);
+    }
+    .sun { position: absolute; top: 45px; right: 16%; width: 96px; aspect-ratio: 1; border-radius: 50%; background: #f6d990; }
+    .mountain {
+      position: absolute; right: -4%; bottom: 23%; width: 110%; height: 57%;
+      clip-path: polygon(0 70%, 23% 22%, 43% 63%, 67% 9%, 100% 66%, 100% 100%, 0 100%);
+      background: linear-gradient(145deg, #9dbb91, #64865c);
+    }
+    .mountain-back {
+      right: 20%; bottom: 30%; width: 95%; height: 48%; opacity: .58;
+      clip-path: polygon(0 72%, 29% 17%, 52% 63%, 75% 4%, 100% 70%, 100% 100%, 0 100%);
+      background: #83a980;
+    }
+    .field {
+      position: absolute; right: -6%; bottom: -3%; width: 112%; height: 42%;
+      border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+      background: repeating-linear-gradient(170deg, transparent 0 23px, rgba(255,255,255,.46) 24px 27px), #64865c;
+    }
+    .farmhouse {
+      position: absolute; z-index: 2; right: 26%; bottom: 31%; width: 70px; height: 48px;
+      background: #fff5db; border-radius: 4px;
+    }
+    .farmhouse::before {
+      content: ""; position: absolute; left: -9px; top: -24px; width: 0; height: 0;
+      border-right: 44px solid transparent; border-bottom: 31px solid #b87454; border-left: 44px solid transparent;
+    }
+    .farmhouse::after { content: ""; position: absolute; right: 12px; bottom: 0; width: 15px; height: 27px; background: #8c6045; }
+    .tree { position: absolute; z-index: 2; bottom: 24%; width: 14px; height: 56px; background: #795b3e; }
+    .tree::before {
+      content: ""; position: absolute; top: -37px; left: -23px; width: 60px; height: 65px;
+      border-radius: 50% 50% 42% 42%; background: #547c59;
+    }
+    .tree-one { left: 15%; transform: scale(.8); }
+    .tree-two { right: 12%; transform: scale(1.05); }
+    .origin-card {
+      position: absolute; z-index: 3; right: 14px; bottom: 17px; max-width: 220px;
+      padding: 15px 18px; color: var(--deep); background: rgba(255,253,246,.94);
+      border: 1px solid rgba(32,89,101,.12); border-radius: 14px; box-shadow: var(--shadow);
+      font-size: 13px;
+    }
+    .origin-card strong { display: block; margin-bottom: 3px; font-size: 15px; }
+    .section { padding-block: 92px; }
+    .section-head { max-width: 680px; margin: 0 auto 42px; text-align: center; }
+    .section-head .eyebrow { margin-bottom: 8px; }
+    .section-title { margin-bottom: 12px; font-size: clamp(28px, 4vw, 40px); line-height: 1.35; }
+    .section-copy { margin-bottom: 0; color: var(--muted); }
+    .values { background: var(--cream); }
+    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
+    .value-card {
+      padding: 25px; border: 1px solid var(--line); border-radius: 17px; background: white;
+    }
+    .value-icon {
+      display: grid; width: 52px; height: 52px; margin-bottom: 17px;
+      place-items: center; border-radius: 50%; background: var(--sky); font-size: 25px;
+    }
+    .value-card h3 { margin-bottom: 8px; font-size: 19px; }
+    .value-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .products { background: #f1f8f4; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product-card {
+      overflow: hidden; border: 1px solid var(--line); border-radius: 17px;
+      background: white; box-shadow: var(--shadow);
+    }
+    .product-art {
+      display: grid; height: 205px; place-items: center; font-size: 88px;
+    }
+    .product-art.cabbage { background: linear-gradient(140deg, #dcefdc, #b8d8b2); }
+    .product-art.orange { background: linear-gradient(140deg, #fff1d8, #f5d59e); }
+    .product-art.tomato { background: linear-gradient(140deg, #f8e4dc, #efb8a7); }
+    .product-info { padding: 21px; }
+    .tag { display: inline-block; margin-bottom: 8px; color: var(--leaf); font-size: 12px; font-weight: 700; }
+    .product-info h3 { margin-bottom: 6px; font-size: 19px; }
+    .product-desc { min-height: 48px; margin-bottom: 15px; color: var(--muted); font-size: 14px; }
+    .product-buy { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .price { color: var(--deep); font-size: 16px; font-weight: 700; white-space: nowrap; }
+    .add-button {
+      padding: 9px 13px; color: white; background: var(--deep);
+      border: 0; border-radius: 999px; font-size: 13px; font-weight: 700;
+      transition: transform .2s, background .2s;
+    }
+    .add-button:hover { transform: translateY(-2px); background: var(--blue); }
+    .status { min-height: 26px; margin: 18px 0 0; color: var(--deep); text-align: center; font-size: 14px; }
+    .story, .brand-cta { background: #e8f3ed; }
+    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 75px; align-items: center; }
+    .basket-art {
+      position: relative; display: grid; min-height: 340px; place-items: center;
+      overflow: hidden; border-radius: 22px; background: linear-gradient(145deg, #d6e9d6, #f3e8c9);
+    }
+    .basket {
+      position: relative; display: flex; width: 230px; height: 150px; align-items: center;
+      justify-content: center; gap: 5px; margin-top: 50px; border: 9px solid #9a6947;
+      border-top-width: 6px; border-radius: 12px 12px 75px 75px;
+      background: repeating-linear-gradient(0deg, #d5a16e 0 13px, #bd8255 14px 17px);
+      box-shadow: 0 22px 35px rgba(77,73,47,.16); font-size: 48px;
+    }
+    .basket::before { content: ""; position: absolute; top: -79px; left: 22px; width: 150px; height: 78px; border: 8px solid #9a6947; border-bottom: 0; border-radius: 85px 85px 0 0; }
+    .story-copy .section-title { max-width: 550px; }
+    .story-copy p { color: var(--muted); }
+    .story-quote { padding-left: 17px; border-left: 3px solid var(--sky-strong); color: var(--deep) !important; font-weight: 700; }
+    .brand-panel {
+      display: flex; align-items: center; justify-content: space-between; gap: 30px;
+      padding: 34px 40px; color: white; background: var(--deep); border-radius: 20px;
+    }
+    .brand-panel h2 { margin-bottom: 7px; font-size: clamp(22px, 3vw, 30px); }
+    .brand-panel p { margin-bottom: 0; color: rgba(255,255,255,.76); font-size: 14px; }
+    .brand-panel .button { flex: 0 0 auto; color: var(--deep); background: white; border-color: white; }
+    .brand-panel .button:hover { background: var(--sky); }
+    .footer { background: var(--cream); }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding-block: 25px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px;
+    }
+    .footer-brand { color: var(--deep); font-size: 16px; font-weight: 700; }
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .container { width: calc(100% - 34px); }
+      .nav { min-height: 72px; }
+      .menu-button { display: block; }
+      .nav-links {
+        position: absolute; top: 72px; right: 0; left: 0; display: grid; gap: 0;
+        max-height: 0; overflow: hidden; background: var(--cream);
+        box-shadow: 0 12px 20px rgba(37,82,84,.08); transition: max-height .25s ease;
+      }
+      .nav-links.open { max-height: 300px; border-top: 1px solid var(--line); }
+      .nav-links a { padding: 12px 22px; border-bottom: 1px solid var(--line); }
+      .nav-links .bag-link { margin: 10px 18px; justify-content: center; }
+      .hero-grid { min-height: 0; grid-template-columns: 1fr; padding-top: 120px; padding-bottom: 55px; }
+      .hero-visual { min-height: 350px; }
+      .value-grid, .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-grid { grid-template-columns: 1fr; gap: 35px; }
+      .basket-art { max-width: 560px; width: 100%; }
+      .section { padding-block: 72px; }
+    }
+    @media (max-width: 520px) {
+      .brand-name { font-size: 15px; }
+      .brand-mark { width: 36px; height: 36px; }
+      .hero-grid { padding-top: 108px; }
+      .hero h1 { font-size: clamp(40px, 11vw, 54px); }
+      .hero-copy { font-size: 15px; }
+      .hero-visual { min-height: 280px; }
+      .sun { top: 25px; width: 70px; }
+      .origin-card { right: 10px; bottom: 10px; max-width: 185px; padding: 11px 13px; font-size: 12px; }
+      .value-grid, .product-grid { grid-template-columns: 1fr; }
+      .product-art { height: 190px; }
+      .product-desc { min-height: 0; }
+      .brand-panel { flex-direction: column; align-items: flex-start; padding: 27px 24px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 7px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="主要導覽">
+      <a class="brand" href="#top" aria-label="山林特產首頁">
+        <span class="brand-mark" aria-hidden="true">山</span>
+        <span><span class="brand-name">山林特產</span><small>FROM OUR HILLS TO YOUR HOME</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#values">友善理念</a>
+        <a href="#products">當季好物</a>
+        <a href="#story">認識小農</a>
+        <a class="bag-link" href="#products">購物袋 <span class="bag-count" aria-live="polite" aria-atomic="true">0</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-grid container">
+        <div>
+          <p class="eyebrow">GOOD FOOD · KIND FARMING</p>
+          <h1 id="heroTitle">把山林的好，<br>帶回<em>日常。</em></h1>
+          <p class="hero-copy">跟著季節認識土地，從用心耕作的小農手中，挑選新鮮、安心又實惠的當季好物。每一份選擇，都是對友善農業的支持。</p>
+          <div class="actions">
+            <a class="button button-primary" href="#products">逛逛當季好物 <span aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="#story">認識山林小農</a>
+          </div>
+          <p class="hero-signature">友善土地・當季採收・產地直送</p>
+        </div>
+        <div class="landscape" role="img" aria-label="淡藍天空、太陽、層疊山坡、梯田、小屋與樹木組成的山林農場插畫">
+          <span class="sun" aria-hidden="true"></span>
+          <span class="mountain mountain-back" aria-hidden="true"></span>
+          <span class="mountain" aria-hidden="true"></span>
+          <span class="field" aria-hidden="true"></span>
+          <span class="farmhouse" aria-hidden="true"></span>
+          <span class="tree tree-one" aria-hidden="true"></span>
+          <span class="tree tree-two" aria-hidden="true"></span>
+          <div class="origin-card"><strong>從產地開始，剛剛好。</strong>讓好食材回到餐桌</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values" id="values" aria-labelledby="valuesTitle">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">OUR PROMISE</p>
+          <h2 class="section-title" id="valuesTitle">好好種，也要好好分享</h2>
+          <p class="section-copy">讓環境友善的耕作，遇見重視生活品質的你。</p>
+        </header>
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true">🌱</span>
+            <h3>友善環境種植</h3>
+            <p>支持珍惜土地與自然生態的耕作方式，讓每一季都能持續豐收。</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true">🧺</span>
+            <h3>當季新鮮直送</h3>
+            <p>跟著產地與季節挑選，讓採收後的新鮮滋味更快抵達你的餐桌。</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true">🤝</span>
+            <h3>實惠支持小農</h3>
+            <p>縮短產地到餐桌的距離，讓小農的用心被看見，也讓好物價格更親切。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products" aria-labelledby="productsTitle">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">PICKED WITH CARE</p>
+          <h2 class="section-title" id="productsTitle">本週山林好物</h2>
+          <p class="section-copy">嚴選小農當季作物，數量依產地採收狀況供應。</p>
+        </header>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-art cabbage" role="img" aria-label="高麗菜"><span aria-hidden="true">🥬</span></div>
+            <div class="product-info">
+              <span class="tag">小農友善栽種</span>
+              <h3>山間鮮採高麗菜</h3>
+              <p class="product-desc">清甜爽脆，家常料理百搭好滋味。</p>
+              <div class="product-buy"><span class="price">NT$ 85／顆</span><button class="add-button" type="button" data-product="山間鮮採高麗菜">加入購物袋</button></div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-art orange" role="img" aria-label="柳橙"><span aria-hidden="true">🍊</span></div>
+            <div class="product-info">
+              <span class="tag">產地當季採收</span>
+              <h3>陽光甜橙</h3>
+              <p class="product-desc">自然熟成的酸甜果香，鮮吃或榨汁都適合。</p>
+              <div class="product-buy"><span class="price">NT$ 120／袋</span><button class="add-button" type="button" data-product="陽光甜橙">加入購物袋</button></div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-art tomato" role="img" aria-label="番茄"><span aria-hidden="true">🍅</span></div>
+            <div class="product-info">
+              <span class="tag">自然農法栽培</span>
+              <h3>熟成小番茄</h3>
+              <p class="product-desc">一口大小、酸甜多汁，點心與沙拉都好吃。</p>
+              <div class="product-buy"><span class="price">NT$ 95／盒</span><button class="add-button" type="button" data-product="熟成小番茄">加入購物袋</button></div>
+            </div>
+          </article>
+        </div>
+        <p class="status" id="cartStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section story" id="story" aria-labelledby="storyTitle">
+      <div class="story-grid container">
+        <div class="basket-art" role="img" aria-label="盛裝當季蔬果的農產竹籃插畫">
+          <div class="basket" aria-hidden="true">🍊🍅🥬</div>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">GROWN BY PEOPLE</p>
+          <h2 class="section-title" id="storyTitle">每一份好滋味，<br>都有一雙用心的手。</h2>
+          <p>我們與在地小農一起順應季節，細心照料每一塊田地。從產地到餐桌，讓當季的新鮮滋味與耕作者的心意，都能被好好分享。</p>
+          <p class="story-quote">買得安心、吃得新鮮，也讓小農的努力得到回饋。</p>
+          <a class="button button-primary" href="#products">一起支持友善農業 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section brand-cta" aria-labelledby="ctaTitle">
+      <div class="container">
+        <div class="brand-panel">
+          <div>
+            <h2 id="ctaTitle">跟著季節，發現產地好物</h2>
+            <p>常來看看本週小農新鮮採收的作物，讓餐桌多一點山林滋味。</p>
+          </div>
+          <a class="button" href="#products">瀏覽當季好物 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner container">
+      <span class="footer-brand">山林特產</span>
+      <p>友善土地，分享當季好滋味。</p>
+      <p>© <span id="year"></span> 山林特產</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector("#navLinks");
+    const cartCount = document.querySelector(".bag-count");
+    const cartStatus = document.querySelector("#cartStatus");
+    let count = 0;
+
+    function setMenuOpen(open) {
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "關閉導覽選單" : "開啟導覽選單");
+      navLinks.classList.toggle("open", open);
+    }
+
+    menuButton.addEventListener("click", () => {
+      setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) setMenuOpen(false);
+    });
+
+    document.querySelectorAll(".add-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        count += 1;
+        cartCount.textContent = String(count);
+        cartStatus.textContent = `已將「${button.dataset.product}」加入購物袋，目前共 ${count} 件。`;
+      });
+    });
+
+    document.querySelector("#year").textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>

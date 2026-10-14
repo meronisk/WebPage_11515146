@@ -1,66 +1,371 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="山林好物，嚴選台灣山間茶香、野蜜與果乾，將產地的季節滋味帶回日常。">
-  <title>山林好物｜把山裡的季節帶回家</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="山林特產，嚴選友善環境種植的小農當季好物，讓新鮮、安心又實惠的山林滋味走進日常。">
+  <meta name="theme-color" content="#e7f6f8">
+  <title>山林特產｜把山林的好，帶回日常</title>
   <style>
-    :root{--forest:#17382b;--deep:#0e291f;--moss:#426a4a;--leaf:#aabb82;--cream:#f4f1e8;--paper:#fbfaf5;--oat:#ddca9e;--clay:#ad7655;--ink:#26342b;--muted:#69776e;--line:#d9ddd1;--shadow:0 20px 50px rgba(18,45,32,.13)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Noto Sans TC",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.container{width:min(1140px,calc(100% - 52px));margin:auto}.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 13px;color:var(--moss);font:500 11px "DM Mono",sans-serif;letter-spacing:.14em}.eyebrow:before{content:"";width:27px;height:1px;background:currentColor}.title{margin:0;font:700 clamp(30px,4vw,48px)/1.35 "Noto Serif TC",serif;letter-spacing:.04em}.title em{color:var(--moss);font-style:normal}.copy{max-width:52ch;margin:18px 0 0;color:var(--muted);font-size:15px}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:11px 22px;border:1px solid transparent;border-radius:1px;font-size:14px;font-weight:700;letter-spacing:.04em;transition:.2s}.button:hover{transform:translateY(-2px)}:focus-visible{outline:3px solid #d3c66b;outline-offset:3px}.button-main{background:var(--oat);color:var(--deep)}.button-main:hover{background:#eddaac}.button-ghost{border-color:rgba(255,255,255,.65);color:white}.button-ghost:hover{background:rgba(255,255,255,.12)}
-    .header{position:absolute;z-index:5;top:0;width:100%;border-bottom:1px solid rgba(255,255,255,.2);color:white}.nav{display:flex;min-height:76px;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font:700 20px/1.1 "Noto Serif TC",serif;letter-spacing:.1em}.brand-mark{display:grid;width:31px;height:31px;place-items:center;border:1px solid var(--leaf);border-radius:50%;color:#dce7b5;font-family:serif}.brand small{display:block;margin-top:6px;color:rgba(255,255,255,.65);font:500 8px "DM Mono",monospace;letter-spacing:.14em}.nav-links{display:flex;align-items:center;gap:27px;font-size:13px}.nav-links a:not(.nav-cta){position:relative}.nav-links a:not(.nav-cta):after{position:absolute;right:0;bottom:-5px;left:0;height:1px;background:var(--leaf);content:"";transform:scaleX(0);transition:transform .2s}.nav-links a:hover:after{transform:scaleX(1)}.nav-cta{padding:8px 14px;border:1px solid rgba(255,255,255,.65)}.nav-cta:hover{background:white;color:var(--forest)}.menu{display:none;border:0;background:transparent;color:white;font-size:24px}
-    .hero{position:relative;min-height:710px;overflow:hidden;background:var(--forest);color:white}.hero:before{position:absolute;inset:0;background:radial-gradient(circle at 76% 25%,rgba(170,187,130,.26),transparent 25%),linear-gradient(115deg,#112f23,#17382b 55%,#31553a);content:""}.hero:after{position:absolute;top:-290px;right:-220px;width:650px;height:650px;border:1px solid rgba(223,235,186,.18);border-radius:50%;box-shadow:0 0 0 75px rgba(223,235,186,.035),0 0 0 185px rgba(223,235,186,.02);content:""}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;min-height:710px;padding:125px 0 72px}.hero .eyebrow{color:#c3d99a}.hero h1{max-width:12ch;margin:0;font:900 clamp(43px,5.5vw,70px)/1.25 "Noto Serif TC",serif;letter-spacing:.06em}.hero h1 em{color:#d2dfa9;font-style:normal}.hero-lede{max-width:43ch;margin:24px 0 30px;color:rgba(255,255,255,.78);font-size:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.signature{margin:28px 0 0;color:rgba(255,255,255,.55);font:500 10px "DM Mono",monospace;letter-spacing:.13em}.hero-photo-wrap{display:flex;justify-content:flex-end}.hero-photo{display:block;width:min(100%,400px);height:auto;aspect-ratio:4/3;object-fit:cover;box-shadow:20px 20px 0 rgba(223,235,186,.12),var(--shadow)}.scroll{position:absolute;z-index:2;bottom:22px;left:max(26px,calc((100% - 1140px)/2));display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.55);font:500 10px "DM Mono",monospace;letter-spacing:.13em}.scroll:before{width:36px;height:1px;background:currentColor;content:""}
-    .story{padding:110px 0;background:var(--paper)}.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(45px,9vw,110px);align-items:center}.story-card{position:relative;min-height:355px;padding:38px;background:#e4e8d9;overflow:hidden}.story-card:before,.story-card:after{position:absolute;bottom:-75px;width:85%;height:65%;border-radius:50% 50% 0 0;content:"";transform:rotate(-9deg)}.story-card:before{left:-20%;background:#82946c}.story-card:after{right:-23%;bottom:-100px;background:#385e43;transform:rotate(12deg)}.story-card-label{position:absolute;z-index:1;top:30px;left:31px;color:var(--forest);font:500 10px "DM Mono",monospace;letter-spacing:.13em}.story-note{position:absolute;z-index:2;right:0;bottom:0;left:0;padding:20px 25px;background:var(--forest);color:#fff}.story-note b{color:#d2dfa9;font:500 10px "DM Mono",monospace;letter-spacing:.12em}.story-note p{margin:7px 0 0;font-family:"Noto Serif TC",serif;font-size:17px}.text-link{display:inline-flex;gap:10px;margin-top:25px;padding-bottom:4px;border-bottom:1px solid var(--moss);color:var(--moss);font-size:14px;font-weight:700}
-    .selection{padding:108px 0 116px;background:var(--cream)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:39px}.section-head .copy{max-width:35ch;margin:0;font-size:14px}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{display:flex;min-height:365px;flex-direction:column;padding:27px;background:var(--paper);border:1px solid rgba(38,52,43,.07);box-shadow:0 1px 0 var(--line);transition:transform .25s,box-shadow .25s}.product:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.product-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line)}.number{color:var(--moss);font:500 11px "DM Mono",monospace;letter-spacing:.1em}.product-icon{display:grid;width:48px;height:48px;place-items:center;border-radius:50%;background:#e6eadc;font-size:23px}.product:nth-child(2) .product-icon{background:#eee4d1}.product:nth-child(3) .product-icon{background:#e8e0d8}.category{margin:21px 0 7px;color:var(--moss);font:500 10px "DM Mono",monospace;letter-spacing:.12em}.product h3{margin:0;font:700 22px/1.5 "Noto Serif TC",serif}.product-description{margin:9px 0 0;color:var(--muted);font-size:13px}.tags{display:flex;flex-wrap:wrap;gap:7px;margin:19px 0 auto}.tags span{padding:3px 8px;border:1px solid var(--line);color:var(--moss);font-size:11px}.product-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:19px;padding-top:14px;border-top:1px solid var(--line)}.price{font:500 13px "DM Mono",monospace}.save{padding:5px 0;border:0;background:none;color:var(--moss);font-size:12px;font-weight:700}.save:hover{color:var(--clay)}
-    .craft{padding:108px 0;color:#f8f8ef;background:var(--forest)}.craft-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(45px,8vw,100px);align-items:center}.craft .eyebrow{color:#c6d99c}.craft .title em{color:#dce7b5}.craft .copy{color:rgba(255,255,255,.72)}.values{margin:27px 0 0;padding:0;list-style:none}.values li{display:grid;grid-template-columns:45px 1fr;gap:14px;padding:17px 0;border-top:1px solid rgba(220,231,181,.25)}.values li:last-child{border-bottom:1px solid rgba(220,231,181,.25)}.value-no{color:#c6d99c;font:500 13px "DM Mono",monospace}.values b{display:block;font-size:15px}.values span span{color:rgba(255,255,255,.66);font-size:13px}.craft-visual{position:relative;display:grid;min-height:340px;place-items:center;overflow:hidden;border:1px solid rgba(220,231,181,.35);background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01))}.craft-visual:before,.craft-visual:after{position:absolute;width:260px;height:260px;border:1px solid rgba(220,231,181,.24);border-radius:50%;content:""}.craft-visual:after{width:190px;height:190px}.craft-mark{position:relative;z-index:1;color:#dce7b5;text-align:center}.craft-mark strong{display:block;font:600 40px "Noto Serif TC",serif}.craft-mark span{font:500 10px "DM Mono",monospace;letter-spacing:.15em}
-    .visit{padding:108px 0;background:var(--paper)}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,100px);align-items:center}.details{display:grid;grid-template-columns:repeat(2,1fr);margin-top:27px}.detail{padding:15px 0;border-top:1px solid var(--line)}.detail:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}.detail b{display:block;margin-bottom:5px;color:var(--moss);font:500 10px "DM Mono",monospace;letter-spacing:.1em}.detail span{font-size:13px}.visit-card{position:relative;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:31px;overflow:hidden;background:var(--moss);color:white;box-shadow:var(--shadow)}.visit-card:before{position:absolute;top:-70px;right:-40px;width:280px;height:280px;border:1px solid rgba(227,237,203,.45);border-radius:50%;box-shadow:0 0 0 38px rgba(227,237,203,.08),0 0 0 90px rgba(227,237,203,.05);content:""}.visit-card>*{position:relative}.visit-card small{color:#dce7b5;font:500 10px "DM Mono",monospace;letter-spacing:.14em}.visit-card h3{max-width:15ch;margin:15px 0 8px;font:700 29px/1.45 "Noto Serif TC",serif}.visit-card p{max-width:32ch;margin:0;color:rgba(255,255,255,.76);font-size:13px}.visit-card a{display:inline-flex;gap:8px;margin-top:18px;font-size:13px;font-weight:700}
-    footer{color:rgba(255,255,255,.68);background:var(--deep)}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:42px;padding:52px 0 34px}.footer-brand{color:white}.footer-brand p{max-width:32ch;margin:15px 0 0;font-size:13px}.footer-title{margin:0 0 13px;color:#c6d99c;font:500 10px "DM Mono",monospace;letter-spacing:.14em}.footer-list{display:grid;gap:8px;margin:0;padding:0;list-style:none;font-size:13px}.footer-list a:hover{color:#fff}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-top:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.45);font:400 10px "DM Mono",monospace;letter-spacing:.06em}.toast{position:fixed;right:22px;bottom:22px;z-index:10;max-width:min(340px,calc(100% - 44px));padding:13px 17px;border-left:3px solid var(--oat);background:var(--deep);box-shadow:var(--shadow);color:#fff;font-size:13px;opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s}.toast.show{opacity:1;transform:none}.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.reveal.visible{opacity:1;transform:none}
-    @media(max-width:840px){.menu{display:block}.nav-links{position:absolute;top:68px;right:0;left:0;display:grid;gap:0;max-height:0;overflow:hidden;background:#112f23;transition:max-height .28s}.nav-links.open{max-height:280px;border-top:1px solid rgba(255,255,255,.15)}.nav-links a{padding:12px 26px;border-bottom:1px solid rgba(255,255,255,.1)}.nav-links .nav-cta{margin:8px 26px;text-align:center}.hero-grid{grid-template-columns:1fr;gap:20px;padding-top:112px}.hero-photo-wrap{justify-content:flex-start}.hero-photo{width:min(100%,400px)}.story-grid,.craft-grid,.visit-grid{grid-template-columns:1fr}.story-card{max-width:560px;width:100%}.products{grid-template-columns:repeat(2,1fr)}.product:last-child{grid-column:span 2}.footer-grid{grid-template-columns:1.4fr 1fr}.footer-brand{grid-column:span 2}}
-    @media(max-width:570px){.container{width:calc(100% - 34px)}.hero{min-height:680px}.hero-grid{min-height:680px;padding:100px 0 44px}.hero h1{font-size:40px}.hero-lede{margin:17px 0 22px;font-size:14px}.hero-photo{width:min(100%,340px)}.scroll{left:17px;bottom:12px}.story,.selection,.craft,.visit{padding:76px 0}.story-card{min-height:300px}.section-head{display:block}.section-head .copy{margin-top:14px}.products{grid-template-columns:1fr}.product:last-child{grid-column:auto}.product{min-height:330px}.craft-visual{min-height:280px}.details{grid-template-columns:1fr}.detail:nth-child(even){padding-left:0;border-left:0}.footer-grid{grid-template-columns:1fr;gap:28px}.footer-brand{grid-column:auto}.footer-bottom{display:grid;gap:7px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    :root {
+      color-scheme: light;
+      --sky: #e7f6f8;
+      --sky-strong: #8ccfdd;
+      --blue: #39899a;
+      --deep: #205965;
+      --ink: #263d3d;
+      --muted: #6d8180;
+      --cream: #fffdf6;
+      --leaf: #64865c;
+      --line: #dce9e6;
+      --gold: #e7bd72;
+      --shadow: 0 18px 45px rgba(37, 82, 84, .1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; cursor: pointer; }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .skip-link { position: absolute; z-index: 20; top: -60px; left: 16px; padding: 10px 16px; color: #fff; background: var(--deep); }
+    .skip-link:focus { top: 12px; }
+
+    .site-header { position: absolute; z-index: 5; inset: 0 0 auto; color: var(--deep); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(32, 89, 101, .15); }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 18px; font-weight: 800; letter-spacing: .08em; }
+    .brand-mark { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 20px; }
+    .brand small { display: block; margin-top: 2px; font-size: 9px; font-weight: 600; letter-spacing: .18em; opacity: .7; }
+    .nav-links { display: flex; align-items: center; gap: 32px; font-size: 14px; font-weight: 650; }
+    .nav-links a:not(.bag-link):hover { color: var(--blue); }
+    .bag-link { display: inline-flex; align-items: center; gap: 8px; padding: 8px 15px; border: 1px solid rgba(32, 89, 101, .55); border-radius: 99px; }
+    .bag-count { display: grid; min-width: 21px; height: 21px; place-items: center; border-radius: 50%; color: white; background: var(--deep); font-size: 11px; }
+    .menu-button { display: none; width: 42px; height: 42px; border: 0; background: transparent; color: var(--deep); font-size: 24px; }
+
+    .hero { position: relative; overflow: hidden; min-height: 710px; display: flex; align-items: center; padding: 125px 0 75px; background: var(--sky); }
+    .hero::before, .hero::after { content: ""; position: absolute; pointer-events: none; border: 1px solid rgba(32, 89, 101, .13); border-radius: 50%; }
+    .hero::before { width: 610px; height: 610px; top: 78px; right: -100px; background: rgba(255, 255, 255, .28); border: 0; }
+    .hero::after { width: 410px; height: 410px; top: 170px; right: 5%; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 32px; }
+    .eyebrow { margin: 0 0 14px; color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .2em; }
+    .hero h1 { max-width: 11ch; margin: 0; font-size: clamp(46px, 6vw, 76px); font-weight: 850; line-height: 1.22; letter-spacing: .04em; }
+    .hero h1 span { color: var(--blue); }
+    .hero-copy { max-width: 460px; margin: 20px 0 0; color: #557174; font-size: 16px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 29px; }
+    .button { display: inline-flex; min-height: 49px; align-items: center; justify-content: center; gap: 10px; padding: 11px 21px; border: 1px solid transparent; border-radius: 99px; font-size: 14px; font-weight: 750; transition: transform .2s, background .2s, box-shadow .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: var(--deep); box-shadow: 0 9px 20px rgba(32, 89, 101, .18); }
+    .button-primary:hover { background: #174953; }
+    .button-link { color: var(--deep); }
+    .hero-note { margin: 27px 0 0; color: #6b8988; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+
+    .landscape { position: relative; min-height: 430px; }
+    .sun { position: absolute; top: 19px; right: 14%; width: 122px; aspect-ratio: 1; border-radius: 50%; background: #f2d48e; box-shadow: 0 0 0 19px rgba(255,255,255,.22); }
+    .hill { position: absolute; bottom: 35px; border-radius: 55% 55% 0 0 / 45% 45% 0 0; }
+    .hill-back { left: 0; bottom: 78px; width: 94%; height: 220px; background: #acd4b3; transform: rotate(-7deg); }
+    .hill-front { right: -3%; width: 92%; height: 215px; background: #779f78; transform: rotate(7deg); }
+    .field { position: absolute; z-index: 1; bottom: 59px; left: 10%; width: 58%; height: 120px; border-radius: 55% 50% 0 0; background: repeating-linear-gradient(170deg, transparent 0 13px, rgba(246,246,213,.5) 14px 16px), #8bb67f; transform: rotate(-5deg); }
+    .farmhouse { position: absolute; z-index: 2; right: 21%; bottom: 181px; width: 90px; height: 68px; background: #fff1d4; clip-path: polygon(50% 0,100% 42%,91% 42%,91% 100%,9% 100%,9% 42%,0 42%); }
+    .farmhouse::after { position: absolute; right: 38px; bottom: 0; width: 15px; height: 30px; background: #ae805a; content: ""; }
+    .tree { position: absolute; z-index: 3; bottom: 175px; left: 13%; width: 17px; height: 95px; border-radius: 10px; background: #826b4d; }
+    .tree::before { position: absolute; top: -43px; left: -32px; width: 82px; height: 90px; border-radius: 48% 52% 44% 56%; background: #5c895f; box-shadow: 23px 18px 0 -10px #79a071, -16px 23px 0 -9px #70a06f; content: ""; }
+    .harvest-note { position: absolute; z-index: 4; right: 0; bottom: 40px; padding: 13px 18px; border-radius: 12px; background: var(--cream); box-shadow: var(--shadow); color: var(--muted); font-size: 12px; }
+    .harvest-note strong { display: block; color: var(--deep); font-size: 14px; }
+
+    .section { padding: 92px 0; }
+    .section-heading { max-width: 650px; margin: 0 auto 43px; text-align: center; }
+    .section-heading h2 { margin: 8px 0 11px; font-size: clamp(30px, 4vw, 43px); line-height: 1.32; letter-spacing: .035em; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .values { background: var(--cream); }
+    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
+    .value-card { padding: 25px; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+    .value-icon { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: var(--sky); font-size: 23px; }
+    .value-card h3 { margin: 14px 0 6px; font-size: 18px; }
+    .value-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .products { background: #f1f8f4; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product-card { overflow: hidden; border: 1px solid rgba(32,89,101,.08); border-radius: 17px; background: #fff; box-shadow: 0 8px 25px rgba(37,83,86,.07); }
+    .product-art { position: relative; display: grid; height: 205px; place-items: center; background: linear-gradient(145deg, #e8f3dd, #faf0d8); }
+    .product-art.citrus { background: linear-gradient(145deg, #fff0d4, #f5d6a8); }
+    .product-art.tomato { background: linear-gradient(145deg, #f8e4d9, #f3cdc0); }
+    .product-emoji { font-size: 82px; filter: drop-shadow(0 10px 8px rgba(73,88,52,.16)); transform: rotate(-7deg); }
+    .season-tag { position: absolute; top: 14px; left: 14px; padding: 4px 10px; border-radius: 99px; background: rgba(255,253,246,.92); color: var(--leaf); font-size: 11px; font-weight: 750; }
+    .product-info { padding: 19px 20px 21px; }
+    .product-info h3 { margin: 0 0 4px; font-size: 19px; }
+    .product-info p { min-height: 45px; margin: 0 0 15px; color: var(--muted); font-size: 13px; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding-top: 13px; }
+    .price { color: var(--deep); font-size: 18px; font-weight: 800; white-space: nowrap; }
+    .price small { color: var(--muted); font-size: 11px; font-weight: 500; }
+    .add-button { min-height: 39px; padding: 7px 13px; border: 1px solid var(--deep); border-radius: 99px; background: #fff; color: var(--deep); font-size: 12px; font-weight: 750; transition: color .2s, background .2s; }
+    .add-button:hover { background: var(--deep); color: #fff; }
+    .cart-status { min-height: 24px; margin: 16px 0 0; color: var(--deep); text-align: center; font-size: 13px; }
+
+    .story { background: #e8f3ed; }
+    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 75px; }
+    .basket-art { position: relative; min-height: 340px; display: grid; place-items: center; }
+    .basket { position: absolute; bottom: 39px; width: 235px; height: 135px; border-radius: 12px 12px 90px 90px; background: repeating-linear-gradient(90deg, #b47c4a 0 17px, #ca9257 18px 22px); box-shadow: var(--shadow); }
+    .basket::before { position: absolute; top: -42px; left: 18px; width: 184px; height: 70px; border: 9px solid #9c6b43; border-bottom: 0; border-radius: 110px 110px 0 0; content: ""; }
+    .basket-fruit { position: absolute; z-index: 1; bottom: 162px; left: calc(50% - 95px); font-size: 68px; letter-spacing: -24px; transform: rotate(-10deg); }
+    .story-copy h2 { margin: 8px 0 16px; font-size: clamp(30px, 4vw, 43px); line-height: 1.35; }
+    .story-copy p { color: #5e7773; }
+    .story-copy .button { margin-top: 10px; }
+    .callout { margin-top: 24px; padding-left: 15px; border-left: 3px solid var(--sky-strong); color: var(--deep); font-size: 14px; font-weight: 700; }
+
+    .newsletter { padding: 0 0 90px; background: #e8f3ed; }
+    .newsletter-panel { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 30px 38px; border-radius: 18px; background: var(--deep); color: white; }
+    .newsletter-panel h2 { margin: 0 0 4px; font-size: 22px; }
+    .newsletter-panel p { margin: 0; color: rgba(255,255,255,.76); font-size: 13px; }
+    .newsletter-link { flex: 0 0 auto; padding: 10px 17px; border: 1px solid rgba(255,255,255,.65); border-radius: 99px; font-size: 13px; font-weight: 700; }
+    .newsletter-link:hover { background: rgba(255,255,255,.12); }
+    .footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .footer-brand { color: var(--deep); font-weight: 800; }
+
+    @media (max-width: 760px) {
+      .nav { min-height: 72px; }
+      .menu-button { display: block; }
+      .nav-links { position: absolute; top: 72px; right: 24px; left: 24px; display: none; align-items: stretch; gap: 0; padding: 10px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--cream); box-shadow: var(--shadow); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 11px 4px; }
+      .bag-link { justify-content: space-between; }
+      .hero { min-height: auto; padding: 120px 0 55px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 8px; }
+      .hero h1 { font-size: clamp(43px, 11vw, 62px); }
+      .landscape { min-height: 330px; margin-top: 3px; }
+      .hero::before { top: 390px; right: -160px; width: 490px; height: 490px; }
+      .hero::after { top: 430px; right: -40px; width: 330px; height: 330px; }
+      .section { padding: 72px 0; }
+      .value-grid, .product-grid { grid-template-columns: 1fr 1fr; }
+      .story-grid { grid-template-columns: 1fr; gap: 18px; }
+      .basket-art { min-height: 280px; }
+      .newsletter { padding-bottom: 65px; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 34px, 1160px); }
+      .brand { font-size: 16px; }
+      .hero { padding-top: 108px; }
+      .hero-copy { font-size: 14px; }
+      .hero-actions { gap: 12px; }
+      .landscape { min-height: 280px; }
+      .sun { width: 92px; }
+      .hill-back { height: 165px; }
+      .hill-front { height: 160px; }
+      .field { height: 90px; }
+      .farmhouse { right: 19%; bottom: 145px; transform: scale(.8); }
+      .tree { bottom: 140px; transform: scale(.8); transform-origin: bottom left; }
+      .harvest-note { bottom: 24px; padding: 10px 13px; }
+      .value-grid, .product-grid { grid-template-columns: 1fr; }
+      .product-art { height: 190px; }
+      .product-info p { min-height: 0; }
+      .newsletter-panel { display: block; padding: 25px; }
+      .newsletter-link { display: inline-flex; margin-top: 17px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
   </style>
 </head>
 <body>
-  <header class="header" id="top"><nav class="nav container" aria-label="主要導覽">
-    <a class="brand" href="#top" aria-label="回到山林好物首頁"><span class="brand-mark" aria-hidden="true">山</span><span>山林好物<small>TAIWAN MOUNTAIN FINDS</small></span></a>
-    <button class="menu" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
-    <div class="nav-links" id="navLinks"><a href="#story">我們的選物</a><a href="#selection">山林特產</a><a href="#craft">產地與心意</a><a class="nav-cta" href="#visit">聯絡我們</a></div>
-  </nav></header>
-  <main>
-    <section class="hero" aria-labelledby="heroTitle"><div class="hero-grid container">
-      <div class="reveal"><p class="eyebrow">FROM THE MOUNTAIN · MADE WITH CARE</p><h1 id="heroTitle">把山裡的<br>季節滋味，<br><em>帶回日常。</em></h1><p class="hero-lede">走進台灣山林，遇見茶、蜜與果實的好味道。山林好物用心挑選小農與在地職人的日常好物，讓每一份風土都有機會被好好品嚐。</p><div class="hero-actions"><a class="button button-main" href="#selection">逛逛山林特產 <span aria-hidden="true">→</span></a><a class="button button-ghost" href="#story">認識山林好物</a></div><p class="signature">GROWN IN THE HILLS · SHARED WITH YOU</p></div>
-      <div class="hero-photo-wrap"><img class="hero-photo" src="images/hero.jpg" width="400" height="300" alt="山林風味點心與手作特產，映著窗外的暮色海景"></div>
-    </div><p class="scroll">SCROLL TO DISCOVER</p></section>
-    <section class="story" id="story" aria-labelledby="storyTitle"><div class="story-grid container">
-      <div class="story-card reveal" aria-hidden="true"><span class="story-card-label">TAIWAN · MOUNTAIN TO TABLE</span><div class="story-note"><b>OUR SELECTION</b><p>讓產地的真實滋味，慢慢走進生活。</p></div></div>
-      <div class="reveal"><p class="eyebrow">GOOD THINGS FROM THE HILLS</p><h2 class="title" id="storyTitle">一份好物，<br>藏著一座山的<em>用心。</em></h2><p class="copy">山林的滋味，來自合適的氣候、土地與照料。我們尋找願意慢慢做好每一件事的在地小農與職人，從原料、製作到包裝，挑選適合分享、也適合日常享用的山間好物。</p><p class="copy">不追求繁複，只想把食材原本的香氣與風味，完整地交到你手上。</p><a class="text-link" href="#craft">看看我們如何選物 <span aria-hidden="true">→</span></a></div>
-    </div></section>
-    <section class="selection" id="selection" aria-labelledby="selectionTitle"><div class="container">
-      <div class="section-head reveal"><div><p class="eyebrow">A TASTE OF THE MOUNTAINS</p><h2 class="title" id="selectionTitle">把山林的<em>好味道</em>帶回家。</h2></div><p class="copy">從清香茶韻、自然花蜜到季節果乾，精選適合分享的台灣山間風味。</p></div>
-      <div class="products">
-        <article class="product reveal"><div class="product-top"><span class="number">01 / TEA</span><span class="product-icon" aria-hidden="true">🍃</span></div><p class="category">高山茶香</p><h3>山嵐烏龍茶</h3><p class="product-description">清雅花香與柔和回甘，為午後留一段安靜時光。</p><div class="tags"><span>清香甘醇</span><span>山間茶園</span><span>手採茶菁</span></div><div class="product-footer"><span class="price">NT$ 680 / 150g</span><button class="save" type="button" data-product="山嵐烏龍茶">收藏好物 ＋</button></div></article>
-        <article class="product reveal"><div class="product-top"><span class="number">02 / HONEY</span><span class="product-icon" aria-hidden="true">🍯</span></div><p class="category">山野蜂香</p><h3>百花野採蜂蜜</h3><p class="product-description">隨花季採收的溫潤甜香，抹吐司、泡茶都合適。</p><div class="tags"><span>花季限定</span><span>自然熟成</span><span>在地蜂農</span></div><div class="product-footer"><span class="price">NT$ 520 / 300g</span><button class="save" type="button" data-product="百花野採蜂蜜">收藏好物 ＋</button></div></article>
-        <article class="product reveal"><div class="product-top"><span class="number">03 / FRUIT</span><span class="product-icon" aria-hidden="true">🍊</span></div><p class="category">季節果香</p><h3>山柑橘果乾</h3><p class="product-description">保留柑橘清香與酸甜口感，輕巧隨身的山間點心。</p><div class="tags"><span>低溫烘焙</span><span>無添加色素</span><span>季節製作</span></div><div class="product-footer"><span class="price">NT$ 240 / 100g</span><button class="save" type="button" data-product="山柑橘果乾">收藏好物 ＋</button></div></article>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主要導覽">
+      <a class="brand" href="#top" aria-label="山林特產首頁">
+        <span class="brand-mark" aria-hidden="true">山</span>
+        <span>山林特產<small>FROM OUR HILLS TO YOUR HOME</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#values">友善理念</a>
+        <a href="#products">當季好物</a>
+        <a href="#story">認識小農</a>
+        <a class="bag-link" href="#products">購物袋 <span class="bag-count" id="bagCount" aria-live="polite">0</span></a>
       </div>
-    </div></section>
-    <section class="craft" id="craft" aria-labelledby="craftTitle"><div class="craft-grid container">
-      <div class="craft-visual reveal" aria-hidden="true"><div class="craft-mark"><strong>山・林・作</strong><span>FROM PLACE, WITH CARE</span></div></div>
-      <div class="reveal"><p class="eyebrow">OUR WAY OF SELECTING</p><h2 class="title" id="craftTitle">尊重土地，<br>也珍惜每一份<em>手作。</em></h2><p class="copy">好吃之外，我們也在意一件好物如何來到手中。選擇當季、看重來源，支持小規模而用心的生產方式，讓山林資源與地方生活都能細水長流。</p><ol class="values"><li><span class="value-no">01</span><span><b>看見產地</b><span>清楚介紹食材與製作者，讓每份風味都有來處。</span></span></li><li><span class="value-no">02</span><span><b>順著季節</b><span>依當令物產挑選，不催促土地，也不掩蓋自然風味。</span></span></li><li><span class="value-no">03</span><span><b>分享好日常</b><span>挑選簡單、實在、適合自己享用或送給親友的好物。</span></span></li></ol></div>
-    </div></section>
-    <section class="visit" id="visit" aria-labelledby="visitTitle"><div class="visit-grid container">
-      <div class="reveal"><p class="eyebrow">SAY HELLO</p><h2 class="title" id="visitTitle">想找一份<br>適合自己的<em>山林滋味？</em></h2><p class="copy">無論是挑選日常茶點、準備一份地方好禮，或想了解商品產地，歡迎寫信與我們聊聊。</p><div class="details"><div class="detail"><b>SELECTION</b><span>台灣山林風土好物</span></div><div class="detail"><b>SHOPPING</b><span>線上選物・送禮諮詢</span></div><div class="detail"><b>EMAIL</b><span>hello@mountaingoods.tw</span></div><div class="detail"><b>HOURS</b><span>週一至週五 10:00–18:00</span></div></div></div>
-      <aside class="visit-card reveal"><small>MOUNTAIN GOODS · TAIWAN</small><h3>把一點山林，<br>放進每一天。</h3><p>從一杯茶、一匙蜜，到一口果香，慢慢認識台灣山間的好味道。</p><a href="mailto:hello@mountaingoods.tw">聯絡山林好物 <span aria-hidden="true">→</span></a></aside>
-    </div></section>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero-grid wrap">
+        <div>
+          <p class="eyebrow">GOOD FOOD · KIND FARMING</p>
+          <h1 id="heroTitle">把山林的好，<br>帶回<span>日常</span>。</h1>
+          <p class="hero-copy">跟著季節認識土地，從用心耕作的小農手中，挑選新鮮、安心又實惠的當季好物。每一份選擇，都是對友善農業的支持。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">逛逛當季好物 <span aria-hidden="true">→</span></a>
+            <a class="button button-link" href="#story">認識山林小農</a>
+          </div>
+          <p class="hero-note">友善土地・當季採收・產地直送</p>
+        </div>
+        <div class="landscape" role="img" aria-label="青翠山巒、農田與山間小屋的插畫">
+          <div class="sun"></div>
+          <div class="hill hill-back"></div>
+          <div class="hill hill-front"></div>
+          <div class="field"></div>
+          <div class="farmhouse"></div>
+          <div class="tree"></div>
+          <div class="harvest-note"><strong>從產地開始，剛剛好。</strong>讓好食材回到餐桌</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values" id="values" aria-labelledby="valuesTitle">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">OUR PROMISE</p>
+          <h2 id="valuesTitle">好好種，也要好好分享</h2>
+          <p>讓環境友善的耕作，遇見重視生活品質的你。</p>
+        </div>
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true">🌱</span>
+            <h3>友善環境種植</h3>
+            <p>支持珍惜土地與自然生態的耕作方式，讓每一季都能持續豐收。</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true">🧺</span>
+            <h3>當季新鮮直送</h3>
+            <p>跟著產地與季節挑選，讓採收後的新鮮滋味更快抵達你的餐桌。</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon" aria-hidden="true">🤝</span>
+            <h3>實惠支持小農</h3>
+            <p>縮短產地到餐桌的距離，讓小農的用心被看見，也讓好物價格更親切。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products" aria-labelledby="productsTitle">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">PICKED WITH CARE</p>
+          <h2 id="productsTitle">本週山林好物</h2>
+          <p>嚴選小農當季作物，數量依產地採收狀況供應。</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-art">
+              <span class="season-tag">小農友善栽種</span>
+              <span class="product-emoji" role="img" aria-label="高麗菜">🥬</span>
+            </div>
+            <div class="product-info">
+              <h3>山間鮮採高麗菜</h3>
+              <p>清甜爽脆，家常料理百搭好滋味。</p>
+              <div class="product-footer">
+                <span class="price">NT$ 85 <small>/ 顆</small></span>
+                <button class="add-button" type="button" data-product="山間鮮採高麗菜">加入購物袋</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-art citrus">
+              <span class="season-tag">產地當季採收</span>
+              <span class="product-emoji" role="img" aria-label="柳橙">🍊</span>
+            </div>
+            <div class="product-info">
+              <h3>陽光甜橙</h3>
+              <p>自然熟成的酸甜果香，鮮吃或榨汁都適合。</p>
+              <div class="product-footer">
+                <span class="price">NT$ 120 <small>/ 袋</small></span>
+                <button class="add-button" type="button" data-product="陽光甜橙">加入購物袋</button>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-art tomato">
+              <span class="season-tag">自然農法栽培</span>
+              <span class="product-emoji" role="img" aria-label="番茄">🍅</span>
+            </div>
+            <div class="product-info">
+              <h3>熟成小番茄</h3>
+              <p>一口大小、酸甜多汁，點心與沙拉都好吃。</p>
+              <div class="product-footer">
+                <span class="price">NT$ 95 <small>/ 盒</small></span>
+                <button class="add-button" type="button" data-product="熟成小番茄">加入購物袋</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="cart-status" id="cartStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section story" id="story" aria-labelledby="storyTitle">
+      <div class="story-grid wrap">
+        <div class="basket-art" role="img" aria-label="盛裝當季蔬果的農產竹籃插畫">
+          <span class="basket-fruit" aria-hidden="true">🍊🍅🥬</span>
+          <div class="basket"></div>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">GROWN BY PEOPLE</p>
+          <h2 id="storyTitle">每一份好滋味，<br>都有一雙用心的手。</h2>
+          <p>山林特產串連在地小農與喜愛自然好物的你。我們從產地故事、栽種方式到採收時節，細心介紹每一份農產，讓支持小農成為生活中簡單而踏實的選擇。</p>
+          <p class="callout">買得安心、吃得新鮮，也讓小農的努力得到回饋。</p>
+          <a class="button button-primary" href="#products">一起支持友善農業 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" aria-label="山林特產品牌資訊">
+      <div class="newsletter-panel wrap">
+        <div>
+          <h2>跟著季節，發現產地好物</h2>
+          <p>常來看看本週小農新鮮採收的作物，讓餐桌多一點山林滋味。</p>
+        </div>
+        <a class="newsletter-link" href="#products">瀏覽當季好物 <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
   </main>
-  <footer><div class="footer-grid container"><div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">山</span><span>山林好物<small>TAIWAN MOUNTAIN FINDS</small></span></a><p>尋找台灣山間好味道，把土地的季節與職人的心意，分享給每一個日常。</p></div><div><p class="footer-title">EXPLORE</p><ul class="footer-list"><li><a href="#story">我們的選物</a></li><li><a href="#selection">山林特產</a></li><li><a href="#craft">產地與心意</a></li></ul></div><div><p class="footer-title">CONTACT</p><ul class="footer-list"><li><a href="mailto:hello@mountaingoods.tw">hello@mountaingoods.tw</a></li><li>台灣山林・在地選物</li><li>週一至週五 10:00–18:00</li></ul></div></div><div class="footer-bottom container"><span>© 2026 MOUNTAIN GOODS. ALL RIGHTS RESERVED.</span><span>ROOTED IN PLACE · MADE TO SHARE</span></div></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <span class="footer-brand">山林特產</span>
+      <span>友善土地，分享當季好滋味。</span>
+      <span>© <span id="year"></span> 山林特產</span>
+    </div>
+  </footer>
+
   <script>
-    const menu=document.querySelector('.menu');const nav=document.querySelector('.nav-links');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'關閉導覽選單':'開啟導覽選單');menu.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','開啟導覽選單');menu.textContent='☰'}));
-    const toast=document.getElementById('toast');let timer;document.querySelectorAll('[data-product]').forEach(button=>button.addEventListener('click',()=>{clearTimeout(timer);toast.textContent='已收藏「'+button.dataset.product+'」，下次選物時再來看看。';toast.classList.add('show');timer=setTimeout(()=>toast.classList.remove('show'),2600)}));
-    const items=document.querySelectorAll('.reveal');if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver'in window)){items.forEach(item=>item.classList.add('visible'))}else{const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});items.forEach(item=>observer.observe(item))}
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector("#navLinks");
+    const bagCount = document.querySelector("#bagCount");
+    const cartStatus = document.querySelector("#cartStatus");
+    let itemCount = 0;
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "開啟導覽選單" : "關閉導覽選單");
+      navLinks.classList.toggle("is-open", !isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        navLinks.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "開啟導覽選單");
+      }
+    });
+
+    document.querySelectorAll(".add-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        itemCount += 1;
+        bagCount.textContent = String(itemCount);
+        cartStatus.textContent = `已將「${button.dataset.product}」加入購物袋，目前共 ${itemCount} 件。`;
+      });
+    });
+
+    document.querySelector("#year").textContent = String(new Date().getFullYear());
   </script>
 </body>
 </html>
